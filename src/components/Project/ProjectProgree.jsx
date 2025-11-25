@@ -1,12 +1,15 @@
 import React from 'react'
-import complete from "../assets/project/complete.png"
-import pending from "../assets/project/pending.png"
-import income from "../assets/project/income.png"
-import pendingIncome from "../assets/project/pending-income.png"
-import ProjectSummary from './ProjectSummary'
+import complete from "../../assets/project/complete.png"
+import pending from "../../assets/project/pending.png"
+import income from "../../assets/project/income.png"
+import pendingIncome from "../../assets/project/pending-income.png"
+import ProjectSummary from "../Project/ProjectSummary/ProjectSummary"
+import Income from './Income/Income'
+
+
 const ProjectProgree = () => {
   return (
-    <div className="">
+    <div className="mx-5">
         <div className="py-5 flex items-center justify-between">
             <div className="bg-[#ffffff] px-4 py-4 flex items-center justify-between gap-8 rounded-lg">
                 <div className="flex items-center">
@@ -73,7 +76,8 @@ const ProjectProgree = () => {
                 </div>
             </div> 
         </div>
-        <ProjectSummary/>
+        <ProjectSummary />
+       <Income/>
     </div>
   )
 }

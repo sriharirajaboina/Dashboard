@@ -1,9 +1,9 @@
 import React from 'react'
-import ProjectProgree from './ProjectProgree'
+import ProjectProgree from "./ProjectProgree"
 
 const Project = () => {
   return (
-    <div className="bg-[#F0F7FF] px-4">
+    <div className="bg-[#F0F7FF]">
       <ProjectProgree/>
     </div>
   )

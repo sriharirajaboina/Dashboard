@@ -12,9 +12,9 @@ const Sider = () => {
   const insight=data.insight
 
   return (
-    <div className="bg-[#07275A]">
+    <div className="bg-[#07275A] h-auto">
       <img src={logo} alt="logo" 
-      className="px-5 py-10 w-90 h-35"/>
+      className="px-5 py-10 w-80 h-30"/>
       <div className="flex ml-4 mb-5">
         <img src={dashboard}
         className="w-6 h-6"/>
@@ -31,6 +31,8 @@ const Sider = () => {
                 backgroundColor: "#07275A",
                 color: "white",
                 boxShadow: "none",
+                width: 250, // set your desired width
+                maxWidth: 250,
               }}
             >
               <AccordionSummary
@@ -58,6 +60,8 @@ const Sider = () => {
                 backgroundColor: "#07275A",
                 color: "white",
                 boxShadow: "none",
+                width: 250, // set your desired width
+                maxWidth: 250,
               }}
             >
               <AccordionSummary
