@@ -2,33 +2,42 @@ import React from 'react'
 import IncomeGraph from './IncomeGraph'
 import SummaryAll from './SummaryAll'
 
-const Income = () => {
-  return (
-    <div className="grid grid-cols-4 ">
-        <div className="col-span-3 bg-[#ffffff] p-4 my-5 rounded-lg">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-lg font-semibold text-[#222]">Income & Expense</h3>
+const Income = ({ darkMode = false }) => {
+  const bgClass = darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black';
+  const selectBg = darkMode ? 'bg-gray-700 text-white' : 'bg-[#F0F7FF] text-black';
 
-            <select
-              className="bg-[#F0F7FF] border border-[#ffffff] rounded-full px-4 py-2 text-sm focus:outline-none"
-            >
-              <option value="Yearly">Yearly</option>
-              <option value="2025">2025</option>
-              <option value="2024">2024</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-              <option value="2021">2021</option>
-              <option value="2020">2020</option>
-            </select>
-          </div>
-            <IncomeGraph/>
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+
+      {/* Income Graph */}
+      <div className={`lg:col-span-3 p-4 my-5 rounded-lg ${bgClass}`}>
+        <div className="flex items-center justify-between mb-8">
+          <h3 className="text-lg font-semibold">{`Income & Expense`}</h3>
+
+          <select
+            className={`border border-transparent rounded-full px-4 py-2 text-sm focus:outline-none ${selectBg}`}
+          >
+            <option value="Yearly">Yearly</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
         </div>
-        <div className="col-span-1">
-            <SummaryAll/>
-        </div>
-        
+
+        {/* Income Graph Component */}
+        <IncomeGraph darkMode={darkMode} />
+      </div>
+
+      {/* Summary All */}
+      <div className={`lg:col-span-1 p-4 my-5 rounded-lg ${bgClass}`}>
+        <SummaryAll darkMode={darkMode} />
+      </div>
     </div>
   )
 }
 
 export default Income
+

@@ -1,26 +1,45 @@
 import React from "react";
 import logo from "../assets/sider/logo.png";
-import dashboard from "../assets/Menu/dashboard.png"
+import dashboard from "../assets/Menu/dashboard.png";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import data from "../Data/Data.json";
 import Toggle from "./Toggle";
+import { useTheme } from "../context/ThemeContex";
 
-const Sider = () => {
+const Sider = ({ mobile = false, closeSidebar }) => {
+  const { darkMode, setDarkMode } = useTheme();
   const menu = data.menu;
-  const insight=data.insight
+  const insight = data.insight;
 
   return (
-    <div className="bg-[#07275A] h-auto">
-      <img src={logo} alt="logo" 
-      className="px-5 py-10 w-80 h-30"/>
-      <div className="flex ml-4 mb-5">
-        <img src={dashboard}
-        className="w-6 h-6"/>
-        <h2 className="text-white ml-3">Dashboard</h2>
+    <div
+      className={`
+        overflow-y-auto h-full px-3 py-6
+        ${darkMode ? "bg-gray-900 text-white" : "bg-[#07275A] text-white"}
+        ${mobile ? "w-full" : "w-60"}
+      `}
+    >
+      {/* Close button only for mobile */}
+      {mobile && (
+        <div className="flex justify-end mb-4">
+          <button onClick={closeSidebar} className="text-3xl text-white">
+            ✕
+          </button>
+        </div>
+      )}
+
+      {/* Logo */}
+      <img src={logo} alt="logo" className="px-2 py-5 w-40 h-auto" />
+
+      {/* Dashboard Heading */}
+      <div className="flex ml-3 mb-5 items-center">
+        <img src={dashboard} className="w-6 h-6" alt="dashboard" />
+        <h2 className="ml-3">Dashboard</h2>
       </div>
 
+      {/* Menu Items */}
       <div className="mb-10">
         {menu.map((item) => {
           const iconPath = new URL(`../assets/menu/${item.icon}`, import.meta.url).href;
@@ -28,59 +47,56 @@ const Sider = () => {
             <Accordion
               key={item.id}
               sx={{
-                backgroundColor: "#07275A",
-                color: "white",
+                backgroundColor: "transparent",
+                color: "inherit",
                 boxShadow: "none",
-                width: 250, // set your desired width
-                maxWidth: 250,
+                width: "100%",
               }}
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
               >
-                <img
-                  src={iconPath}
-                  className="w-6 h-6 mr-3"
-                  alt={item.title}
-                />
+                <img src={iconPath} className="w-6 h-6 mr-3" />
                 {item.title}
               </AccordionSummary>
             </Accordion>
           );
         })}
       </div>
-      <div>
-        <h2 className="text-white text-base font-bold ml-5 mb-3 ">INSIGHTS</h2>
-        {insight.map((item) => {
-          const iconPath = new URL(`../assets/menu/${item.icon}`, import.meta.url).href;
-          return (
-            <Accordion
-              key={item.id}
-              sx={{
-                backgroundColor: "#07275A",
-                color: "white",
-                boxShadow: "none",
-                width: 250, // set your desired width
-                maxWidth: 250,
-              }}
+
+      {/* Insights */}
+      <h2 className="text-base font-bold ml-3 mb-3">INSIGHTS</h2>
+      {insight.map((item) => {
+        const iconPath = new URL(`../assets/menu/${item.icon}`, import.meta.url).href;
+        return (
+          <Accordion
+            key={item.id}
+            sx={{
+              backgroundColor: "transparent",
+              color: "inherit",
+              boxShadow: "none",
+              width: "100%",
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              >
-                <img
-                  src={iconPath}
-                  className="w-6 h-6 mr-3"
-                  alt={item.title}
-                />
-                {item.title}
-              </AccordionSummary>
-            </Accordion>
-          );
-        })}
+              <img src={iconPath} className="w-6 h-6 mr-3" />
+              {item.title}
+            </AccordionSummary>
+          </Accordion>
+        );
+      })}
+
+      {/* Toggle */}
+      <div className="mt-6 ml-3">
+        <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />
       </div>
-      <Toggle/>
     </div>
   );
 };
 
 export default Sider;
+
+
+

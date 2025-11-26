@@ -10,18 +10,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
-ChartJS.register(
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Filler,
-  Tooltip,
-  Legend
-);
-
 import alldata from "../../../Data/Data.json";
+
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Filler, Tooltip, Legend);
 
 const IncomeWaveChart = ({ incomegraph }) => {
   const graphData = incomegraph || alldata.incomegraph || [];
@@ -31,7 +22,6 @@ const IncomeWaveChart = ({ incomegraph }) => {
   }
 
   const labels = graphData.map((item) => item.label);
-
   const cleanNumber = (value) => Number(value.replace(/\$|,/g, ""));
   const incomeData = graphData.map((item) => cleanNumber(item.income));
   const profitData = graphData.map((item) => cleanNumber(item.profit));
@@ -47,8 +37,8 @@ const IncomeWaveChart = ({ incomegraph }) => {
         tension: 0.4,
         fill: false,
         pointRadius: 0,
-        pointHoverRadius: 6,         // bubble appears on hover
-        hitRadius: 20,               // <-- LARGE invisible hit area (fixes issue)
+        pointHoverRadius: 6,
+        hitRadius: 20,
         pointHoverBackgroundColor: "#09AF5F",
       },
       {
@@ -60,7 +50,7 @@ const IncomeWaveChart = ({ incomegraph }) => {
         fill: false,
         pointRadius: 0,
         pointHoverRadius: 6,
-        hitRadius: 20,               // <-- IMPORTANT
+        hitRadius: 20,
         pointHoverBackgroundColor: "#FDD306",
       },
     ],
@@ -68,10 +58,9 @@ const IncomeWaveChart = ({ incomegraph }) => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
-      legend: {
-        display: false,
-      },
+      legend: { display: false },
       tooltip: {
         backgroundColor: "#ffffff",
         titleColor: "#000",
@@ -87,28 +76,26 @@ const IncomeWaveChart = ({ incomegraph }) => {
         },
       },
     },
-
     scales: {
       y: {
-         suggestedMax: Math.max(...incomeData, ...profitData) * 1.05,
-         ticks: {
+        suggestedMax: Math.max(...incomeData, ...profitData) * 1.05,
+        ticks: {
           callback: (value) => `${value.toLocaleString()}`,
         },
         grid: { display: true },
       },
-      x: {
-         offset: true, 
-        grid: { display: false },
-      },
+      x: { offset: true, grid: { display: false } },
     },
   };
 
   return (
-    <div>
-      <Line data={chartData} options={options} className="p-3" />
+    <div className="w-full">
+      <div className="h-64 sm:h-80 md:h-96">
+        <Line data={chartData} options={options} />
+      </div>
 
       {/* Custom Circle Legend */}
-      <div className="flex gap-6 mt-8 items-center justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 items-center justify-center">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-[#09AF5F]"></div>
           <span className="text-sm font-bold text-[#333]">Income</span>
@@ -124,5 +111,6 @@ const IncomeWaveChart = ({ incomegraph }) => {
 };
 
 export default IncomeWaveChart;
+
 
 
