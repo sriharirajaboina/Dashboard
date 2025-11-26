@@ -21,7 +21,7 @@ const Sider = ({ mobile = false, closeSidebar }) => {
         ${mobile ? "w-full" : "w-60"}
       `}
     >
-      {/* Close button only for mobile */}
+      
       {mobile && (
         <div className="flex justify-end mb-4">
           <button onClick={closeSidebar} className="text-3xl text-white">
@@ -29,17 +29,13 @@ const Sider = ({ mobile = false, closeSidebar }) => {
           </button>
         </div>
       )}
-
-      {/* Logo */}
       <img src={logo} alt="logo" className="px-2 py-5 w-40 h-auto" />
 
-      {/* Dashboard Heading */}
       <div className="flex ml-3 mb-5 items-center">
         <img src={dashboard} className="w-6 h-6" alt="dashboard" />
         <h2 className="ml-3">Dashboard</h2>
       </div>
 
-      {/* Menu Items */}
       <div className="mb-10">
         {menu.map((item) => {
           const iconPath = new URL(`../assets/menu/${item.icon}`, import.meta.url).href;
@@ -63,8 +59,6 @@ const Sider = ({ mobile = false, closeSidebar }) => {
           );
         })}
       </div>
-
-      {/* Insights */}
       <h2 className="text-base font-bold ml-3 mb-3">INSIGHTS</h2>
       {insight.map((item) => {
         const iconPath = new URL(`../assets/menu/${item.icon}`, import.meta.url).href;
@@ -87,8 +81,6 @@ const Sider = ({ mobile = false, closeSidebar }) => {
           </Accordion>
         );
       })}
-
-      {/* Toggle */}
       <div className="mt-6 ml-3">
         <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />
       </div>

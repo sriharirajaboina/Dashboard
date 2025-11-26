@@ -9,7 +9,6 @@ const Income = ({ darkMode = false }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
 
-      {/* Income Graph */}
       <div className={`lg:col-span-3 p-4 my-5 rounded-lg ${bgClass}`}>
         <div className="flex items-center justify-between mb-8">
           <h3 className="text-lg font-semibold">{`Income & Expense`}</h3>
@@ -27,11 +26,11 @@ const Income = ({ darkMode = false }) => {
           </select>
         </div>
 
-        {/* Income Graph Component */}
+        
         <IncomeGraph darkMode={darkMode} />
       </div>
 
-      {/* Summary All */}
+      
       <div className={`lg:col-span-1 p-4 my-5 rounded-lg ${bgClass}`}>
         <SummaryAll darkMode={darkMode} />
       </div>

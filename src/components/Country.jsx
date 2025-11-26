@@ -17,7 +17,6 @@ const CountryLanguageSelect = () => {
 
   return (
     <div className="relative min-w-[200px]">
-      {/* SELECTED AREA */}
       <div
         className="flex items-center justify-between bg-[#ffffff] text-white p-2 rounded-md cursor-pointer"
         onClick={() => setOpen(!open)}
@@ -33,8 +32,6 @@ const CountryLanguageSelect = () => {
 
         <span className="text-black ml-5">▼</span>
       </div>
-
-      {/* DROPDOWN MENU */}
       {open && (
         <div className="absolute w-full bg-[#ffffff] text-white mt-2 rounded-md shadow-lg z-10">
           {countries.map((item) => (

@@ -1,8 +1,8 @@
 import React from "react";
-import { useTheme } from "../context/ThemeContex"; // adjust path if needed
+import { useTheme } from "../context/ThemeContex"; 
 
 const Footer = () => {
-  const { darkMode } = useTheme(); // read dark mode from context
+  const { darkMode } = useTheme();
 
   const bgColor = darkMode ? "bg-gray-900" : "bg-white";
   const textColor = darkMode ? "text-gray-400" : "text-[#6F767E]";

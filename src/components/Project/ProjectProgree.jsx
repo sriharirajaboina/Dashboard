@@ -12,11 +12,8 @@ const ProjectProgree = () => {
 
   return (
     <div className={`mx-3 sm:mx-5 ${darkMode ? "bg-gray-900 text-white" : "bg-[#F0F7FF] text-black"}`}>
-
-      {/* TOP STATS CARDS */}
       <div className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-        {/* CARD 1 */}
         <div className={`px-4 py-4 flex items-center justify-between rounded-lg ${darkMode ? "bg-gray-800" : "bg-white"}`}>
           <div className="flex items-center">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center ${darkMode ? "bg-gray-700" : "bg-[#F0F7FF]"}`}>
@@ -35,7 +32,6 @@ const ProjectProgree = () => {
           </div>
         </div>
 
-        {/* CARD 2 */}
         <div className={`px-4 py-4 flex items-center justify-between rounded-lg ${darkMode ? "bg-gray-800" : "bg-white"}`}>
           <div className="flex items-center">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center ${darkMode ? "bg-gray-700" : "bg-[#F0F7FF]"}`}>
@@ -50,11 +46,10 @@ const ProjectProgree = () => {
           </div>
           <div className="text-green-400 flex flex-col items-center">
             <h4 className="text-sm">&#8599;</h4>
-            <h4 className="font-bold">1.3%</h4>
+            <h4 className="font-bold text-[#F93C65]">1.3%</h4>
           </div>
         </div>
 
-        {/* CARD 3 */}
         <div className={`px-4 py-4 flex items-center justify-between rounded-lg ${darkMode ? "bg-gray-800" : "bg-white"}`}>
           <div className="flex items-center">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center ${darkMode ? "bg-gray-700" : "bg-[#F0F7FF]"}`}>
@@ -69,11 +64,10 @@ const ProjectProgree = () => {
           </div>
           <div className="text-green-400 flex flex-col items-center">
             <h4 className="text-sm">&#8599;</h4>
-            <h4 className="font-bold">1.3%</h4>
+            <h4 className="font-bold ">1.3%</h4>
           </div>
         </div>
 
-        {/* CARD 4 */}
         <div className={`px-4 py-4 flex items-center justify-between rounded-lg ${darkMode ? "bg-gray-800" : "bg-white"}`}>
           <div className="flex items-center">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center ${darkMode ? "bg-gray-700" : "bg-[#F0F7FF]"}`}>
@@ -88,12 +82,11 @@ const ProjectProgree = () => {
           </div>
           <div className="text-green-400 flex flex-col items-center">
             <h4 className="text-sm">&#8599;</h4>
-            <h4 className="font-bold">1.3%</h4>
+            <h4 className="font-bold text-[#F93C65]">1.3%</h4>
           </div>
         </div>
       </div>
-
-      {/* BOTTOM SECTION */}
+      
       <ProjectSummary darkMode={darkMode} />
       <Income darkMode={darkMode} />
 

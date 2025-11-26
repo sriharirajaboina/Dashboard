@@ -45,8 +45,6 @@ const Header = () => {
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </button>
-
-        {/* CENTER */}
         <div className="flex flex-1 items-center flex-wrap gap-3">
           <h2 className={`hidden md:block text-base sm:text-lg font-semibold whitespace-nowrap ${nameColor}`}>
             Acquisition Summary Overview:
@@ -69,7 +67,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* RIGHT */}
         <div className="flex items-center gap-5">
           <div className="hidden md:block">
             <Country />

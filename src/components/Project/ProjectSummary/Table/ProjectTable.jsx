@@ -39,7 +39,7 @@ const ProjectTable = ({ filter, darkMode }) => {
     if (tab === "Ongoing") return row.status === "In.Progress";
     if (tab === "Negotation") return row.status === "Rejected";
     if (tab === "Completed") return row.status === "Completed";
-    return true; // All Projects
+    return true; 
   });
 
   const headBg = darkMode ? "#1F2937" : "#F3F4F6";

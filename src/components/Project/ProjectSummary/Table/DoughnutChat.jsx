@@ -10,7 +10,6 @@ import data from "../../../../Data/Data.json";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-// Arrow Plugin
 const arrowPlugin = {
   id: "arrowPlugin",
   afterDatasetDraw(chart) {
@@ -72,7 +71,6 @@ const DoughnutChat = ({ darkMode = false }) => {
         color: darkMode ? "#f3f4f6" : "#222222",
       }}
     >
-      {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
         <h3 className="text-lg font-semibold">{`Awards`}</h3>
 
@@ -95,12 +93,10 @@ const DoughnutChat = ({ darkMode = false }) => {
         </select>
       </div>
 
-      {/* Arrow Doughnut */}
       <div className="flex justify-center items-center mt-4 h-60 sm:h-64 md:h-72 w-full">
         <Doughnut data={chartData} options={options} />
       </div>
 
-      {/* TEXT LIST BELOW */}
       <div className="mt-5 flex flex-col gap-2 sm:gap-3">
         {doughnutData.map((item, index) => (
           <div
