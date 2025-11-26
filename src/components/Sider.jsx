@@ -16,10 +16,12 @@ const Sider = ({ mobile = false, closeSidebar }) => {
   const insight = data.insight;
 
 
-  const getIcon = (fileName) => {
-    const path = `../assets/menu/${fileName}`;
-    return menuIcons[path]?.default || "";
-  };
+const getIcon = (fileName) => {
+  const match = Object.entries(menuIcons).find(([key]) =>
+    key.endsWith(fileName)
+  );
+  return match ? match[1].default : "";
+};
 
   return (
     <div
