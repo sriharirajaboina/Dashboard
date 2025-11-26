@@ -53,7 +53,7 @@ const SummaryAll = ({ darkMode = false }) => {
             </div>
 
             {/* Right part: value */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <h3 className={`text-lg sm:text-xl font-bold text-right ${darkMode ? "text-white" : "text-black"}`}>
                 {item.value}
               </h3>
