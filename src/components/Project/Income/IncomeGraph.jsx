@@ -79,9 +79,13 @@ const IncomeWaveChart = ({ incomegraph }) => {
     scales: {
       y: {
         suggestedMax: Math.max(...incomeData, ...profitData) * 1.05,
-        ticks: {
-          callback: (value) => `${value.toLocaleString()}`,
+       ticks: {
+        stepSize: 20000, 
+        callback: (value) => {
+          if (value >= 1000) return `${value / 1000}k`; 
+          return value;
         },
+      },
         grid: { display: true },
       },
       x: { offset: true, grid: { display: false } },

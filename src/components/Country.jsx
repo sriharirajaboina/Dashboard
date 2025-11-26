@@ -5,10 +5,10 @@ import india from "../assets/flags/india.png";
 import canada from "../assets/flags/canada.png";
 
 const countries = [
-  { code: "USA", label: "English (US)", short: "EN", flag: usa },
-  { code: "UK", label: "English (UK)", short: "EN", flag: uk },
-  { code: "India", label: "Hindi", short: "HI", flag: india },
-  { code: "Canada", label: "English (CA)", short: "EN", flag: canada },
+  { code: "USA", label: "Eng (US)", short: "EN", flag: usa },
+  { code: "UK", label: "Eng (UK)", short: "EN", flag: uk },
+  { code: "India", label: "Hin", short: "HI", flag: india },
+  { code: "Canada", label: "Eng (CA)", short: "EN", flag: canada },
 ];
 
 const CountryLanguageSelect = () => {

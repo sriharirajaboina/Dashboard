@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Country from "./Country";
 import Sider from "./Sider";
-import admin from "../assets/flags/usa.png";
+import avatar from "../assets/avatar.png";
 import { useTheme } from "../context/ThemeContex"; // Adjust the path
 
 const Header = () => {
@@ -74,7 +74,7 @@ const Header = () => {
 
           <div className="flex items-center gap-2">
             <img
-              src={admin}
+              src={avatar}
               className="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover"
             />
             <div className="hidden md:flex flex-col">

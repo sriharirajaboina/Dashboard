@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className={`w-full py-4 px-6 ${bgColor} ${textColor}`}>
-      <h1 className="text-sm sm:text-base flex sm:flex-row items-center gap-1">
+      <h1 className="text-sm sm:text-base sm:flex-row items-center gap-1">
         © 2024 
         <span className={`font-medium ${nameColor}`}>
           &nbsp;abbdullarayhan@gmail.com

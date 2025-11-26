@@ -6,3 +6,16 @@ body{
     overflow-X:hidden;
      font-family: 'JUST Sans', sans-serif;
 }
+
+.wedge {
+  width: 14px;
+  height: 12px;
+  background-color: #217EFD;
+  clip-path: polygon(
+    0% 0%, 
+    72% 0%, 
+    100% 50%, 
+    72% 100%, 
+    0% 100%
+  );
+}

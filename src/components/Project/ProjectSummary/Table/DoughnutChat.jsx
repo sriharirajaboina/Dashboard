@@ -30,7 +30,7 @@ const arrowPlugin = {
       ctx.beginPath();
       ctx.moveTo(tipX, tipY);
       ctx.lineTo(baseX, baseY);
-
+      
       ctx.closePath();
       ctx.fill();
     });
@@ -52,6 +52,7 @@ const DoughnutChat = ({ darkMode = false }) => {
         data: doughnutData.map((item) => item.value),
         backgroundColor: colors,
         borderWidth: 0,
+         spacing: 5, 
         hoverOffset: 4,
       },
     ],
@@ -105,7 +106,7 @@ const DoughnutChat = ({ darkMode = false }) => {
           >
             <div className="flex gap-2">
               <span
-                className="w-3 h-3 rounded-full"
+                className="wedge"
                 style={{ backgroundColor: colors[index] }}
               ></span>
               <span style={{ color: darkMode ? "#f3f4f6" : "#222" }} className="text-sm font-semibold">
