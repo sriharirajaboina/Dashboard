@@ -13,7 +13,7 @@ const Sider = ({ mobile = false, closeSidebar }) => {
 
   
   const getMenuIcon = (file) =>
-    new URL(`../assets/menu/${file}`, import.meta.url).href;
+    new URL(`../assets/menuicon/${file}`, import.meta.url).href;
 
   const getInsightIcon = (file) =>
     new URL(`../assets/insight/${file}`, import.meta.url).href;
