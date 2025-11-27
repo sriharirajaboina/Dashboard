@@ -3,9 +3,10 @@ import usa from "../assets/flags/usa.png";
 import uk from "../assets/flags/uk.png";
 import india from "../assets/flags/india.png";
 import canada from "../assets/flags/canada.png";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const countries = [
-  { code: "USA", label: "Eng (US)", short: "EN", flag: usa },
+  { code: "USD", label: "Eng (US)", short: "EN", flag: usa },
   { code: "UK", label: "Eng (UK)", short: "EN", flag: uk },
   { code: "India", label: "Hin", short: "HI", flag: india },
   { code: "Canada", label: "Eng (CA)", short: "EN", flag: canada },
@@ -21,16 +22,16 @@ const CountryLanguageSelect = () => {
         className="flex items-center justify-between bg-[#ffffff] text-white p-2 rounded-md cursor-pointer"
         onClick={() => setOpen(!open)}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <img src={selected.flag} className="w-6 h-6 rounded-full" />
 
-          <div className="flex gap-3  leading-tight">
-            <span className="px-2 font-bold text-gray-500 border-r-3 border-gray-500">{selected.label}</span>
+          <div className="flex gap-2  leading-tight mt-1">
+            <span className="px-2 font-bold text-gray-500 border-r-3 border-gray-200">{selected.label}</span>
             <span className="text-base font-bold text-gray-300">{selected.code}</span>
           </div>
         </div>
 
-        <span className="text-black ml-5">▼</span>
+        <ExpandMoreIcon className="text-black ml-3 mt-1"></ExpandMoreIcon>
       </div>
       {open && (
         <div className="absolute w-full bg-[#ffffff] text-white mt-2 rounded-md shadow-lg z-10">

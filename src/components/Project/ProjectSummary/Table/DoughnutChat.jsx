@@ -53,7 +53,10 @@ const DoughnutChat = ({ darkMode = false }) => {
         backgroundColor: colors,
         borderWidth: 0,
          spacing: 5, 
+          rotation: -90, // start from top
+          clip: 90, 
         hoverOffset: 4,
+       
       },
     ],
   };
@@ -72,16 +75,16 @@ const DoughnutChat = ({ darkMode = false }) => {
         color: darkMode ? "#f3f4f6" : "#222222",
       }}
     >
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
+      <div className="flex flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
         <h3 className="text-lg font-semibold">{`Awards`}</h3>
 
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="rounded-full px-3 py-2 text-sm w-full sm:w-auto"
+          className="rounded-full px-4 py-2 text-base font-semibold w-50% sm:w-auto"
           style={{
             backgroundColor: darkMode ? "#374151" : "#F0F7FF",
-            color: darkMode ? "#f3f4f6" : "#222",
+            color: darkMode ? "#f3f4f6" : "#666666",
           }}
         >
           <option value="Monthly">Monthly</option>

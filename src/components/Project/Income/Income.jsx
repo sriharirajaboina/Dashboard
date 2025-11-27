@@ -4,7 +4,7 @@ import SummaryAll from './SummaryAll'
 
 const Income = ({ darkMode = false }) => {
   const bgClass = darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black';
-  const selectBg = darkMode ? 'bg-gray-700 text-white' : 'bg-[#F0F7FF] text-black';
+  const selectBg = darkMode ? 'bg-gray-700 text-white' : 'bg-[#F0F7FF] text-[#666666]';
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
@@ -14,7 +14,7 @@ const Income = ({ darkMode = false }) => {
           <h3 className="text-lg font-semibold">{`Income & Expense`}</h3>
 
           <select
-            className={`border border-transparent rounded-full px-4 py-2 text-sm focus:outline-none ${selectBg}`}
+            className={`border border-transparent rounded-full px-4 py-2 text-base font-semibold focus:outline-none ${selectBg}`}
           >
             <option value="Yearly">Yearly</option>
             <option value="2025">2025</option>

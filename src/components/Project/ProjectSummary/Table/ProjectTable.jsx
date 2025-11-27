@@ -42,11 +42,11 @@ const ProjectTable = ({ filter, darkMode }) => {
     return true; 
   });
 
-  const headBg = darkMode ? "#1F2937" : "#F3F4F6";
+  const headBg = darkMode ? "#1F2937" : "#ffffff";
 
   return (
     <div className={`w-full h-full rounded-lg shadow flex flex-col p-4 overflow-hidden ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
-      {/* Tabs */}
+     
       <div className={`flex flex-wrap items-center gap-4 p-2 border-b ${darkMode ? "border-gray-600 bg-gray-700 text-white" : "border-[#27AE60] bg-[#27AE60]/10 text-[#222]"} font-medium cursor-pointer`}>
         {["Ongoing", "Negotation", "Completed"].map((t) => (
           <h3
@@ -59,7 +59,6 @@ const ProjectTable = ({ filter, darkMode }) => {
         ))}
       </div>
 
-      {/* Table */}
       <div className="flex-1 mt-3 overflow-y-auto overflow-x-auto max-h-full">
         <TableContainer
           component={Paper}

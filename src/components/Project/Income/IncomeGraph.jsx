@@ -98,16 +98,15 @@ const IncomeWaveChart = ({ incomegraph }) => {
         <Line data={chartData} options={options} />
       </div>
 
-      {/* Custom Circle Legend */}
-      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 items-center justify-center">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-row gap-4 sm:gap-6 mt-6 items-center justify-center">
+        <div className="flex items-center gap-3">
           <div className="w-3 h-3 rounded-full bg-[#09AF5F]"></div>
-          <span className="text-sm font-bold text-[#333]">Income</span>
+          <span className="text-base font-extrabold text-[#333]">Income</span>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <div className="w-3 h-3 rounded-full bg-[#FDD306]"></div>
-          <span className="text-sm font-bold text-[#333]">Profit</span>
+          <span className="text-base font-extrabold text-[#333]">Profit</span>
         </div>
       </div>
     </div>

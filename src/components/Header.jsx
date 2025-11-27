@@ -72,7 +72,7 @@ const Header = () => {
             <Country />
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <img
               src={avatar}
               className="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover"
@@ -81,7 +81,7 @@ const Header = () => {
               <h3 className={`font-semibold text-sm md:text-base whitespace-nowrap ${nameColor}`}>
                 Robert Patison
               </h3>
-              <h6 className={`text-xs md:text-sm ${roleColor}`}>
+              <h6 className={`text-xs font-semibold md:text-sm ${roleColor}`}>
                 Super Admin
               </h6>
             </div>

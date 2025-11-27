@@ -9,15 +9,15 @@ const ProjectSummary = ({ darkMode }) => {
   const options = ["All Projects", "Ongoing", "Negotation", "Completed"];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 p-3">
 
       <div className="lg:col-span-3 flex flex-col gap-4">
-        <div className={`flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 rounded-xl relative ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
+        <div className={`flex flex-row justify-between items-start sm:items-center p-3 rounded-xl relative ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
           <h2 className="text-xl font-semibold">Project Summary</h2>
 
-          <div className="w-full sm:w-40 relative mt-2 sm:mt-0">
+          <div className="w-50% sm:w-40 relative mt-2 sm:mt-0">
             <div
-              className={`rounded-full p-2 flex justify-center items-center cursor-pointer ${darkMode ? "bg-gray-700 text-white" : "bg-[#F0F7FF]"}`}
+              className={`rounded-full p-2 flex justify-center gap-3  items-center cursor-pointer ${darkMode ? "bg-gray-700 text-white" : "bg-[#F0F7FF]"}`}
               onClick={() => setOpen(!open)}
             >
               <span>{selected}</span>
@@ -29,7 +29,7 @@ const ProjectSummary = ({ darkMode }) => {
                 {options.map((item) => (
                   <div
                     key={item}
-                    className={`p-3 cursor-pointer hover:${darkMode ? "bg-gray-600" : "bg-blue-100"}`}
+                    className={`p-2 cursor-pointer hover:${darkMode ? "bg-gray-600" : "bg-blue-100"}`}
                     onClick={() => { setSelected(item); setOpen(false); }}
                   >
                     {item}

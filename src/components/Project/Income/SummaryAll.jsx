@@ -7,7 +7,6 @@ const SummaryAll = ({ darkMode = false }) => {
   const getIcon = (id) =>
     new URL(`../../../assets/summary/${id}`, import.meta.url).href;
 
-
   const lightBgColors = {
     1: "#FFC7001A",
     2: "#1BFF4D1A",
@@ -18,7 +17,6 @@ const SummaryAll = ({ darkMode = false }) => {
     7: "#D9D9FF",
   };
 
-  
   const darkBgColors = {
     1: "#FFC70033",
     2: "#1BFF4D33",
@@ -41,7 +39,7 @@ const SummaryAll = ({ darkMode = false }) => {
         {summary.map((item) => (
           <div
             key={item.id}
-            className="p-4 rounded-lg flex flex-row items-start sm:items-center justify-between gap-4 shadow"
+            className="p-2 rounded-lg flex flex-row items-start sm:items-center justify-between gap-4 shadow"
             style={{ backgroundColor: bgColors[item.id] || (darkMode ? "#1F2937" : "#F0F7FF") }}
           >
             <div className="flex items-center gap-3 flex-1 min-w-0">
@@ -50,7 +48,8 @@ const SummaryAll = ({ darkMode = false }) => {
                 {item.name}
               </h3>
             </div>
-            <div className="shrink-0">
+            <div className="shrink-0 p-1 rounded-lg"
+             style={{ backgroundColor: bgColors[item.id] || (darkMode ? "#1F2937" : "#F0F7FF") }}>
               <h3 className={`text-lg sm:text-xl font-bold text-right ${darkMode ? "text-white" : "text-black"}`}>
                 {item.value}
               </h3>

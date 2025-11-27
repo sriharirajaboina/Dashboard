@@ -27,7 +27,7 @@ const ProjectProgree = () => {
             </div>
           </div>
           <div className="text-green-400 flex flex-col items-center">
-            <h4 className="text-sm">&#8599;</h4>
+            <h4 className="text-sm font-extrabold">&#8599;</h4>
             <h4 className="font-bold">1.3%</h4>
           </div>
         </div>
@@ -45,7 +45,7 @@ const ProjectProgree = () => {
             </div>
           </div>
           <div className="text-green-400 flex flex-col items-center">
-            <h4 className="text-sm">&#8599;</h4>
+            <h4 className="text-sm font-extrabold">&#8599;</h4>
             <h4 className="font-bold text-[#F93C65]">1.3%</h4>
           </div>
         </div>
@@ -63,7 +63,7 @@ const ProjectProgree = () => {
             </div>
           </div>
           <div className="text-green-400 flex flex-col items-center">
-            <h4 className="text-sm">&#8599;</h4>
+            <h4 className="text-sm font-extrabold">&#8599;</h4>
             <h4 className="font-bold ">1.3%</h4>
           </div>
         </div>
@@ -81,7 +81,7 @@ const ProjectProgree = () => {
             </div>
           </div>
           <div className="text-green-400 flex flex-col items-center">
-            <h4 className="text-sm">&#8599;</h4>
+            <h4 className="text-sm font-extrabold">&#8599;</h4>
             <h4 className="font-bold text-[#F93C65]">1.3%</h4>
           </div>
         </div>
