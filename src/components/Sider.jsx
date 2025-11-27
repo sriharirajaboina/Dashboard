@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/sider/logo.png";
-import dashboard from "../assets/menu/dashboard.png";
+import dashboard from "../assets/sider/dashboard.png";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import data from "../Data/Data.json";
 import Toggle from "./Toggle";
