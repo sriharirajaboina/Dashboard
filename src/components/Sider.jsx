@@ -1,8 +1,6 @@
 import React from "react";
 import logo from "../assets/sider/logo.png";
 import dashboard from "../assets/menu/dashboard.png";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import data from "../Data/Data.json";
 import Toggle from "./Toggle";
@@ -49,22 +47,17 @@ const Sider = ({ mobile = false, closeSidebar }) => {
             menuIcons[`../assets/menu/${item.icon}`]?.default ?? "";
 
           return (
-            <Accordion
+            <div
               key={item.id}
-              sx={{
-                backgroundColor: "transparent",
-                color: "inherit",
-                boxShadow: "none",
-                width: "100%",
-              }}
+              className="flex items-center justify-between px-2 py-3 cursor-pointer hover:bg-white/10 rounded-lg"
             >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              >
+              <div className="flex items-center">
                 <img src={iconPath} className="w-6 h-6 mr-3" alt={item.title} />
-                {item.title}
-              </AccordionSummary>
-            </Accordion>
+                <span>{item.title}</span>
+              </div>
+
+              <ExpandMoreIcon sx={{ color: "white" }} />
+            </div>
           );
         })}
       </div>
@@ -77,26 +70,21 @@ const Sider = ({ mobile = false, closeSidebar }) => {
           insightIcons[`../assets/insight/${item.icon}`]?.default ?? "";
 
         return (
-          <Accordion
+          <div
             key={item.id}
-            sx={{
-              backgroundColor: "transparent",
-              color: "inherit",
-              boxShadow: "none",
-              width: "100%",
-            }}
+            className="flex items-center justify-between px-2 py-3 cursor-pointer hover:bg-white/10 rounded-lg"
           >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-            >
+            
+            <div className="flex items-center">
               <img src={iconPath} className="w-6 h-6 mr-3" alt={item.title} />
-              {item.title}
-            </AccordionSummary>
-          </Accordion>
+              <span>{item.title}</span>
+            </div>
+
+            <ExpandMoreIcon sx={{ color: "white" }} />
+          </div>
         );
       })}
 
-      
       <div className="mt-6 ml-3">
         <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />
       </div>
