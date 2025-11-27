@@ -5,18 +5,41 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import data from "../Data/Data.json";
 import Toggle from "./Toggle";
 import { useTheme } from "../context/ThemeContex";
-
+import application from "../assets/menu/application.png"
+import invoice from "../assets/menu/invoice.png"
+import reports from "../assets/menu/report.png"
+import configuration from "../assets/menu/configuration.png"
+import contact from "../assets/menu/contact.png"
+import expense from "../assets/menu/expense.png"
+import income from "../assets/menu/income.png"
+import user from "../assets/menu/user.png"
+import setting from "../assets/menu/setting.png"
+import notification from "../assets/insight/notification.png"
+import inbox from "../assets/insight/inbox.png"
 
 const Sider = ({ mobile = false, closeSidebar }) => {
   const { darkMode, setDarkMode } = useTheme();
   const menu = data.menu;
   const insight = data.insight;
 
-  const getMenuIcon = (file) =>
-  new URL(`../assets/menu/${file}`, import.meta.url).href;
+  const menuIcons = {
+  1: application,
+  2: invoice,
+  3:reports,
+  4:configuration,
+  5:contact,
+  6:expense,
+  7:income,
+  8:user,
+  9:setting,
+};
 
-  const getInsightIcon = (file) =>
-  new URL(`../assets/insight/${file}`, import.meta.url).href;
+  const insightIcons = {
+  1: notification,
+  2: inbox,
+};
+  // const getInsightIcon = (file) =>
+  // new URL(`../assets/insight/${file}`, import.meta.url).href;
 
   return (
     <div
@@ -52,11 +75,11 @@ const Sider = ({ mobile = false, closeSidebar }) => {
             className="flex items-center justify-between px-2 py-3 cursor-pointer hover:bg-white/10 rounded-lg"
           >
             <div className="flex items-center">
-              <img
-                src={getMenuIcon(item.icon)}
-                className="w-6 h-6 mr-3"
-                alt={item.title}
-              />
+            <img
+              src={menuIcons[item.id]}
+              className="w-6 h-6 mr-3"
+              alt={item.title}
+            />
               <span>{item.title}</span>
             </div>
 
@@ -73,7 +96,7 @@ const Sider = ({ mobile = false, closeSidebar }) => {
         >
           <div className="flex items-center">
             <img
-              src={getInsightIcon(item.icon)}
+              src={insightIcons[item.id]}
               className="w-6 h-6 mr-3"
               alt={item.title}
             />
