@@ -6,17 +6,17 @@ import data from "../Data/Data.json";
 import Toggle from "./Toggle";
 import { useTheme } from "../context/ThemeContex";
 
-// ---- Safe Icon Loader (Works in Vite + Deployment) ----
-const getMenuIcon = (file) =>
-  new URL(`../assets/menu/${file}`, import.meta.url).href;
-
-const getInsightIcon = (file) =>
-  new URL(`../assets/insight/${file}`, import.meta.url).href;
 
 const Sider = ({ mobile = false, closeSidebar }) => {
   const { darkMode, setDarkMode } = useTheme();
   const menu = data.menu;
   const insight = data.insight;
+
+  const getMenuIcon = (file) =>
+  new URL(`../assets/menu/${file}`, import.meta.url).href;
+
+  const getInsightIcon = (file) =>
+  new URL(`../assets/insight/${file}`, import.meta.url).href;
 
   return (
     <div
@@ -26,7 +26,7 @@ const Sider = ({ mobile = false, closeSidebar }) => {
         ${mobile ? "w-full" : "w-60"}
       `}
     >
-      {/* Close Button For Mobile */}
+ 
       {mobile && (
         <div className="flex justify-end mb-4">
           <button onClick={closeSidebar} className="text-3xl text-white">
@@ -64,8 +64,6 @@ const Sider = ({ mobile = false, closeSidebar }) => {
           </div>
         ))}
       </div>
-
-      {/* Insights Section */}
       <h2 className="text-base font-bold ml-3 mb-3">INSIGHTS</h2>
 
       {insight.map((item) => (
@@ -86,7 +84,6 @@ const Sider = ({ mobile = false, closeSidebar }) => {
         </div>
       ))}
 
-      {/* Dark Mode Toggle */}
       <div className="mt-6 ml-3">
         <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />
       </div>
